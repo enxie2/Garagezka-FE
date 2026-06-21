@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -54,8 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar – GARAGEZKA</title>
+    <title>Daftar â€“ GARAGEZKA</title>
     <meta name="description" content="Buat akun GARAGEZKA untuk booking servis motor tanpa antri.">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="auth-page">
@@ -67,10 +68,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p class="auth-subtitle">Daftar untuk booking servis tanpa antri</p>
 
         <?php if ($error): ?>
-        <div class="alert alert-danger">❌ <?= $error ?></div>
+        <div class="alert alert-danger">âŒ <?= $error ?></div>
         <?php endif; ?>
         <?php if ($success): ?>
-        <div class="alert alert-success">✅ <?= $success ?> <a href="login.php" style="color: inherit; font-weight: 700;">Masuk sekarang</a></div>
+        <div class="alert alert-success">âœ… <?= $success ?> <a href="login.php" style="color: inherit; font-weight: 700;">Masuk sekarang</a></div>
         <?php endif; ?>
 
         <form method="POST" action="daftar.php">
@@ -96,12 +97,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="form-group">
                     <label class="form-label">Password</label>
                     <input type="password" name="password" class="form-control"
-                           placeholder="••••••••" required>
+                           placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                 </div>
                 <div class="form-group">
                     <label class="form-label">Konfirmasi password</label>
                     <input type="password" name="konfirmasi_password" class="form-control"
-                           placeholder="••••••••" required>
+                           placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                 </div>
             </div>
             <div class="form-group">
@@ -120,5 +121,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             &copy; <?= date('Y') ?> GARAGEZKA. Presisi dalam Performa.
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

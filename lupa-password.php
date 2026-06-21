@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -41,7 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lupa Password – GARAGEZKA</title>
+    <title>Lupa Password â€“ GARAGEZKA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="auth-page">
@@ -53,10 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p class="auth-subtitle">Masukkan email Anda dan kami akan mengirimkan link untuk mereset password</p>
 
         <?php if ($error): ?>
-        <div class="alert alert-danger">❌ <?= $error ?></div>
+        <div class="alert alert-danger">âŒ <?= $error ?></div>
         <?php endif; ?>
         <?php if ($success): ?>
-        <div class="alert alert-success">✅ <?= htmlspecialchars($success) ?></div>
+        <div class="alert alert-success">âœ… <?= htmlspecialchars($success) ?></div>
         <?php endif; ?>
 
         <form method="POST" action="lupa-password.php">
@@ -70,11 +71,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <div class="auth-footer" style="margin-top: 20px;">
-            <a href="login.php" style="color: var(--text-secondary);">← Kembali ke Login</a>
+            <a href="login.php" style="color: var(--text-secondary);">â† Kembali ke Login</a>
         </div>
         <div style="text-align: center; margin-top: 20px; font-size: 0.72rem; color: var(--text-muted);">
             &copy; <?= date('Y') ?> GARAGEZKA. Presisi dalam Performa.
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

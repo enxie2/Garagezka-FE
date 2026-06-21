@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once '../config/database.php';
 require_once '../includes/helpers.php';
@@ -61,7 +61,8 @@ $labelStatus = ['' => 'Semua', 'pending' => 'Pending', 'dikonfirmasi' => 'Dikonf
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelola Booking – Admin GARAGEZKA</title>
+    <title>Kelola Booking â€“ Admin GARAGEZKA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -74,7 +75,7 @@ $labelStatus = ['' => 'Semua', 'pending' => 'Pending', 'dikonfirmasi' => 'Dikonf
         </div>
 
         <?php if ($msg): ?>
-        <div class="alert alert-success">✅ <?= $msg ?></div>
+        <div class="alert alert-success">âœ… <?= $msg ?></div>
         <?php endif; ?>
 
         <!-- FILTER STATUS -->
@@ -96,7 +97,7 @@ $labelStatus = ['' => 'Semua', 'pending' => 'Pending', 'dikonfirmasi' => 'Dikonf
             </div>
             <?php if (empty($bookings)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">📋</div>
+                <div class="empty-state-icon">ðŸ“‹</div>
                 <h3>Tidak ada booking</h3>
             </div>
             <?php else: ?>
@@ -137,8 +138,8 @@ $labelStatus = ['' => 'Semua', 'pending' => 'Pending', 'dikonfirmasi' => 'Dikonf
                                 <input type="hidden" name="booking_id" value="<?= $b['id'] ?>">
                                 <?php
                                 $transitions = [
-                                    'pending'      => ['dikonfirmasi' => '✅ Konfirmasi', 'dibatalkan' => '❌ Batalkan'],
-                                    'dikonfirmasi' => ['selesai' => '🏁 Selesai', 'dibatalkan' => '❌ Batalkan'],
+                                    'pending'      => ['dikonfirmasi' => 'âœ… Konfirmasi', 'dibatalkan' => 'âŒ Batalkan'],
+                                    'dikonfirmasi' => ['selesai' => 'ðŸ Selesai', 'dibatalkan' => 'âŒ Batalkan'],
                                     'selesai'      => [],
                                     'dibatalkan'   => [],
                                 ];
@@ -162,5 +163,6 @@ $labelStatus = ['' => 'Semua', 'pending' => 'Pending', 'dikonfirmasi' => 'Dikonf
         </div>
     </main>
 </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

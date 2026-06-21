@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once '../config/database.php';
 require_once '../includes/helpers.php';
@@ -29,7 +29,8 @@ $recentBookings = $conn->query("
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin – GARAGEZKA</title>
+    <title>Dashboard Admin â€“ GARAGEZKA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -75,13 +76,13 @@ $recentBookings = $conn->query("
         <!-- QUICK ACTIONS -->
         <div style="display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;">
             <a href="bookings.php?status=pending" class="btn btn-primary btn-sm">
-                ⏳ Konfirmasi Booking (<?= $bookingPending ?>)
+                â³ Konfirmasi Booking (<?= $bookingPending ?>)
             </a>
-            <a href="users.php" class="btn btn-outline btn-sm">👥 Lihat Semua User</a>
-            <a href="layanan.php?action=tambah" class="btn btn-outline btn-sm">➕ Tambah Layanan</a>
+            <a href="users.php" class="btn btn-outline btn-sm">ðŸ‘¥ Lihat Semua User</a>
+            <a href="layanan.php?action=tambah" class="btn btn-outline btn-sm">âž• Tambah Layanan</a>
             <?php if ($pesanBaru > 0): ?>
             <a href="kontak.php" class="btn btn-outline btn-sm" style="color:var(--accent); border-color:rgba(229,53,53,0.3);">
-                📩 <?= $pesanBaru ?> Pesan Baru
+                ðŸ“© <?= $pesanBaru ?> Pesan Baru
             </a>
             <?php endif; ?>
         </div>
@@ -90,11 +91,11 @@ $recentBookings = $conn->query("
         <div class="table-wrapper">
             <div class="table-header">
                 <span class="table-title">Booking Terbaru</span>
-                <a href="bookings.php" class="btn btn-ghost btn-sm">Lihat Semua →</a>
+                <a href="bookings.php" class="btn btn-ghost btn-sm">Lihat Semua â†’</a>
             </div>
             <?php if (empty($recentBookings)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">📋</div>
+                <div class="empty-state-icon">ðŸ“‹</div>
                 <h3>Belum ada booking</h3>
             </div>
             <?php else: ?>
@@ -132,5 +133,6 @@ $recentBookings = $conn->query("
         </div>
     </main>
 </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

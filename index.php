@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -10,8 +10,9 @@ $currentPage = 'index';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GARAGEZKA – Servis Motor Jadi Lebih Mudah</title>
+    <title>GARAGEZKA â€“ Servis Motor Jadi Lebih Mudah</title>
     <meta name="description" content="GARAGEZKA hadir untuk mengubah paradigma bengkel motor tradisional. Booking servis motor online dengan sistem digital yang transparan dan profesional.">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -34,17 +35,17 @@ $currentPage = 'index';
     <section class="section" style="padding-top:0">
         <div class="features-grid">
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
+                <div class="feature-icon">âš¡</div>
                 <h3>Cepat</h3>
                 <p>Finalisasi operasional dengan sistem digital terlengkap untuk pengerjaan tepat waktu.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
+                <div class="feature-icon">ðŸ›¡ï¸</div>
                 <h3>Terpercaya</h3>
                 <p>Transparansi penuh pada setiap penggantian suku cadang dan detail biaya pengerjaan.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon">👨‍🔧</div>
+                <div class="feature-icon">ðŸ‘¨â€ðŸ”§</div>
                 <h3>Profesional</h3>
                 <p>Mekanik ahli dengan peralatan diagnostik terbaru untuk performa motor maksimal.</p>
             </div>
@@ -64,5 +65,6 @@ $currentPage = 'index';
     <style>
     .hero { background: radial-gradient(ellipse at center top, rgba(229,53,53,0.08) 0%, transparent 60%); }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -35,10 +35,10 @@ foreach ($notifList as $n) {
 }
 
 $notifIcons = [
-    'berhasil' => '📅',
-    'selesai'  => '🔧',
-    'info'     => 'ℹ️',
-    'peringatan' => '⚠️',
+    'berhasil' => 'ðŸ“…',
+    'selesai'  => 'ðŸ”§',
+    'info'     => 'â„¹ï¸',
+    'peringatan' => 'âš ï¸',
 ];
 ?>
 <!DOCTYPE html>
@@ -46,7 +46,8 @@ $notifIcons = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notifikasi – GARAGEZKA</title>
+    <title>Notifikasi â€“ GARAGEZKA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -78,7 +79,7 @@ $notifIcons = [
         <div class="table-wrapper">
             <?php if (empty($notifList)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">🔔</div>
+                <div class="empty-state-icon">ðŸ””</div>
                 <h3>Belum ada notifikasi</h3>
                 <p>Notifikasi akan muncul setelah Anda melakukan booking.</p>
             </div>
@@ -97,7 +98,7 @@ $notifIcons = [
             <?php foreach ($items as $n): ?>
             <div class="notif-item" style="<?= !$n['is_read'] ? 'background: rgba(229,53,53,0.03);' : '' ?>">
                 <div class="notif-icon <?= $n['tipe'] ?>">
-                    <?= $notifIcons[$n['tipe']] ?? 'ℹ️' ?>
+                    <?= $notifIcons[$n['tipe']] ?? 'â„¹ï¸' ?>
                 </div>
                 <div class="notif-content">
                     <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
@@ -119,5 +120,6 @@ $notifIcons = [
         </div>
     </main>
 </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

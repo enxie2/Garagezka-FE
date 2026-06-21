@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once '../config/database.php';
 require_once '../includes/helpers.php';
@@ -23,7 +23,8 @@ $users = $conn->query("
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelola User – Admin GARAGEZKA</title>
+    <title>Kelola User â€“ Admin GARAGEZKA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
@@ -44,7 +45,7 @@ $users = $conn->query("
             </div>
             <?php if (empty($users)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">👥</div>
+                <div class="empty-state-icon">ðŸ‘¥</div>
                 <h3>Belum ada user terdaftar</h3>
             </div>
             <?php else: ?>
@@ -93,5 +94,6 @@ $users = $conn->query("
         </div>
     </main>
 </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

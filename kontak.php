@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -32,8 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontak – GARAGEZKA</title>
+    <title>Kontak â€“ GARAGEZKA</title>
     <meta name="description" content="Hubungi GARAGEZKA untuk informasi layanan servis motor atau booking. Kami siap membantu performa motor Anda.">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -46,34 +47,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="kontak-grid" style="margin-top: 40px;">
             <div class="kontak-info">
                 <div class="kontak-item">
-                    <div class="kontak-item-icon">📞</div>
+                    <div class="kontak-item-icon">ðŸ“ž</div>
                     <div>
                         <div class="kontak-item-label">Telepon &amp; WhatsApp</div>
                         <div class="kontak-item-value">+62 812 3456 7890</div>
                     </div>
                 </div>
                 <div class="kontak-item">
-                    <div class="kontak-item-icon">✉️</div>
+                    <div class="kontak-item-icon">âœ‰ï¸</div>
                     <div>
                         <div class="kontak-item-label">Email</div>
                         <div class="kontak-item-value">halo@garagezka.com</div>
                     </div>
                 </div>
                 <div class="kontak-item">
-                    <div class="kontak-item-icon">🕐</div>
+                    <div class="kontak-item-icon">ðŸ•</div>
                     <div>
                         <div class="kontak-item-label">Jam Operasional</div>
-                        <div class="kontak-item-value">Senin – Sabtu<br>08:00 – 17:00 WIB</div>
+                        <div class="kontak-item-value">Senin â€“ Sabtu<br>08:00 â€“ 17:00 WIB</div>
                     </div>
                 </div>
             </div>
 
             <div>
                 <?php if ($success): ?>
-                <div class="alert alert-success">✅ <?= $success ?></div>
+                <div class="alert alert-success">âœ… <?= $success ?></div>
                 <?php endif; ?>
                 <?php if ($error): ?>
-                <div class="alert alert-danger">❌ <?= $error ?></div>
+                <div class="alert alert-danger">âŒ <?= $error ?></div>
                 <?php endif; ?>
 
                 <form method="POST" action="kontak.php">
@@ -96,5 +97,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </section>
 
     <?php renderFooter(); ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

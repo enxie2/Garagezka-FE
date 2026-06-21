@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -74,7 +74,8 @@ $initial = strtoupper(substr($user['nama_lengkap'], 0, 1));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil – GARAGEZKA</title>
+    <title>Profil â€“ GARAGEZKA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -87,10 +88,10 @@ $initial = strtoupper(substr($user['nama_lengkap'], 0, 1));
         </div>
 
         <?php if ($error): ?>
-        <div class="alert alert-danger">❌ <?= $error ?></div>
+        <div class="alert alert-danger">âŒ <?= $error ?></div>
         <?php endif; ?>
         <?php if ($success): ?>
-        <div class="alert alert-success">✅ <?= $success ?></div>
+        <div class="alert alert-success">âœ… <?= $success ?></div>
         <?php endif; ?>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px;">
@@ -134,17 +135,17 @@ $initial = strtoupper(substr($user['nama_lengkap'], 0, 1));
                     <div class="form-group">
                         <label class="form-label">Password Lama</label>
                         <input type="password" name="password_lama" class="form-control"
-                               placeholder="••••••••" required>
+                               placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Password Baru</label>
                         <input type="password" name="password_baru" class="form-control"
-                               placeholder="••••••••" required>
+                               placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Konfirmasi Password Baru</label>
                         <input type="password" name="konfirmasi_password" class="form-control"
-                               placeholder="••••••••" required>
+                               placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">Update Password</button>
                 </form>
@@ -159,5 +160,6 @@ $initial = strtoupper(substr($user['nama_lengkap'], 0, 1));
         </div>
     </main>
 </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

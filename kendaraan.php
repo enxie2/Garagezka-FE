@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -64,7 +64,8 @@ if (isset($_GET['edit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kendaraan Saya – GARAGEZKA</title>
+    <title>Kendaraan Saya â€“ GARAGEZKA</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -77,13 +78,13 @@ if (isset($_GET['edit'])) {
         </div>
 
         <?php if (isset($_GET['saved'])): ?>
-        <div class="alert alert-success">✅ Data kendaraan berhasil disimpan.</div>
+        <div class="alert alert-success">âœ… Data kendaraan berhasil disimpan.</div>
         <?php endif; ?>
         <?php if (isset($_GET['deleted'])): ?>
-        <div class="alert alert-danger">🗑️ Kendaraan berhasil dihapus.</div>
+        <div class="alert alert-danger">ðŸ—‘ï¸ Kendaraan berhasil dihapus.</div>
         <?php endif; ?>
         <?php if ($error): ?>
-        <div class="alert alert-danger">❌ <?= $error ?></div>
+        <div class="alert alert-danger">âŒ <?= $error ?></div>
         <?php endif; ?>
 
         <!-- FORM ADD/EDIT -->
@@ -134,7 +135,7 @@ if (isset($_GET['edit'])) {
         <div class="kendaraan-grid">
             <?php foreach ($kendaraanList as $k): ?>
             <div class="kendaraan-card">
-                <div class="kendaraan-icon">🏍️</div>
+                <div class="kendaraan-icon">ðŸï¸</div>
                 <div class="kendaraan-name"><?= htmlspecialchars($k['nama_kendaraan']) ?></div>
                 <div class="kendaraan-plat"><?= htmlspecialchars($k['nomor_plat']) ?></div>
                 <div class="kendaraan-meta">TAHUN PRODUKSI</div>
@@ -143,11 +144,11 @@ if (isset($_GET['edit'])) {
                 <div class="kendaraan-meta" style="margin-top: 4px;">Warna: <span><?= htmlspecialchars($k['warna']) ?></span></div>
                 <?php endif; ?>
                 <div class="kendaraan-actions">
-                    <a href="kendaraan.php?edit=<?= $k['id'] ?>" class="btn btn-outline btn-sm" title="Edit">✏️</a>
+                    <a href="kendaraan.php?edit=<?= $k['id'] ?>" class="btn btn-outline btn-sm" title="Edit">âœï¸</a>
                     <form method="POST" action="kendaraan.php" style="display: inline;"
                           onsubmit="return confirm('Hapus kendaraan ini?')">
                         <input type="hidden" name="delete_id" value="<?= $k['id'] ?>">
-                        <button type="submit" class="btn btn-outline btn-sm" title="Hapus" style="color: var(--accent); border-color: rgba(229,53,53,0.3);">🗑️</button>
+                        <button type="submit" class="btn btn-outline btn-sm" title="Hapus" style="color: var(--accent); border-color: rgba(229,53,53,0.3);">ðŸ—‘ï¸</button>
                     </form>
                 </div>
             </div>
@@ -155,7 +156,7 @@ if (isset($_GET['edit'])) {
 
             <!-- ADD CARD -->
             <a href="kendaraan.php?tambah=1" class="kendaraan-card kendaraan-add">
-                <div class="kendaraan-add-icon">➕</div>
+                <div class="kendaraan-add-icon">âž•</div>
                 <div class="kendaraan-add-text">Tambah Kendaraan Baru</div>
                 <div class="kendaraan-add-sub">Daftarkan motor baru kamu</div>
             </a>
@@ -169,10 +170,11 @@ if (isset($_GET['edit'])) {
             </div>
             <div class="stat-card">
                 <div class="stat-label">Status Bengkel</div>
-                <div style="font-size: 0.85rem; font-weight: 600; color: var(--success); margin-top: 8px;">✅ <?= $bengkelStatus ?></div>
+                <div style="font-size: 0.85rem; font-weight: 600; color: var(--success); margin-top: 8px;">âœ… <?= $bengkelStatus ?></div>
             </div>
         </div>
     </main>
 </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
