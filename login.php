@@ -28,8 +28,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_name'] = $user['nama_lengkap'];
             $_SESSION['user_role'] = $user['role'];
             
-            $redirect = $_GET['redirect'] ?? 'dashboard.php';
-            header('Location: ' . $redirect);
+            // Redirect berdasarkan role
+            if ($user['role'] === 'admin') {
+                header('Location: admin/dashboard.php');
+            } else {
+                $redirect = $_GET['redirect'] ?? 'dashboard.php';
+                header('Location: ' . $redirect);
+            }
             exit;
         } else {
             $error = 'Email/nomor HP atau password salah.';
