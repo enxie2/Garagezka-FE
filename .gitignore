@@ -1,0 +1,33 @@
+# ===========================
+# GARAGEZKA - .gitignore
+# ===========================
+
+# File konfigurasi sensitif (JANGAN diupload!)
+config/database.php
+
+# File setup (sudah dihapus, tapi jaga-jaga)
+setup_password.php
+
+# Apache config lokal
+.htaccess
+apache-vhost.conf
+
+# Log files
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Temporary files
+*.tmp
+*.bak
+*.swp

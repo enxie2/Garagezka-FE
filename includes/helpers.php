@@ -1,0 +1,130 @@
+<?php
+function renderNavbar($currentPage = '') {
+    $isLoggedIn = isset($_SESSION['user_id']);
+    $pages = [
+        'index' => ['Beranda', 'index.php'],
+        'tentang' => ['Tentang Kami', 'tentang.php'],
+        'layanan' => ['Layanan', 'layanan.php'],
+        'kontak' => ['Kontak', 'kontak.php'],
+    ];
+    echo '<nav class="navbar">';
+    echo '<a href="index.php" class="navbar-brand">GARAGE<span>ZKA</span></a>';
+    echo '<div class="navbar-nav">';
+    foreach ($pages as $key => [$label, $href]) {
+        $active = ($currentPage === $key) ? ' active' : '';
+        echo "<a href=\"$href\" class=\"$active\">$label</a>";
+    }
+    echo '</div>';
+    echo '<div class="navbar-actions">';
+    if ($isLoggedIn) {
+        echo '<a href="dashboard.php" class="btn btn-outline btn-sm">Dashboard</a>';
+    } else {
+        echo '<a href="login.php" class="btn-login">Login</a>';
+        echo '<a href="daftar.php" class="btn btn-primary btn-sm">Daftar</a>';
+    }
+    echo '</div>';
+    echo '</nav>';
+}
+
+function renderFooter() {
+    echo '
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">GARAGE<span>ZKA</span></div>
+                <p class="footer-desc">Workshop spesialis motor dengan dedikasi pada akurasi teknis dan kepuasan pelanggan. Kami menghadirkan layanan servis berkualitas tinggi dengan teknologi digital untuk transparansi penuh.</p>
+            </div>
+            <div>
+                <div class="footer-nav-title">Navigasi</div>
+                <nav class="footer-nav">
+                    <a href="index.php">Beranda</a>
+                    <a href="tentang.php">Tentang Kami</a>
+                    <a href="layanan.php">Layanan</a>
+                    <a href="kontak.php">Kontak</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; ' . date('Y') . ' GARAGEZKA. Presisi dalam Performa.
+        </div>
+    </footer>';
+}
+
+function renderSidebar($activePage = '') {
+    $userName = $_SESSION['user_name'] ?? 'User';
+    $userId = $_SESSION['user_id'] ?? 0;
+    $initial = strtoupper(substr($userName, 0, 1));
+    
+    $navItems = [
+        'dashboard' => ['Dashboard', 'dashboard.php', '
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            </svg>'],
+        'booking' => ['Booking Servis', 'booking.php', '
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>'],
+        'kendaraan' => ['Kendaraan Saya', 'kendaraan.php', '
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+            </svg>'],
+        'riwayat' => ['Riwayat Servis', 'riwayat.php', '
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>'],
+        'notifikasi' => ['Notifikasi', 'notifikasi.php', '
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>'],
+        'profil' => ['Profil', 'profil.php', '
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>'],
+    ];
+    
+    echo '<aside class="sidebar">';
+    echo '<div class="sidebar-logo">GARAGE<span>ZKA</span></div>';
+    echo '<nav class="sidebar-nav">';
+    
+    foreach ($navItems as $key => [$label, $href, $icon]) {
+        $active = ($activePage === $key) ? ' active' : '';
+        echo "<a href=\"$href\" class=\"$active\">{$icon}{$label}</a>";
+    }
+    
+    echo '</nav>';
+    echo '<div class="sidebar-user">';
+    echo "<div class=\"sidebar-avatar\">{$initial}</div>";
+    echo '<div class="sidebar-user-info">';
+    echo "<div class=\"sidebar-user-name\">{$userName}</div>";
+    echo '<div class="sidebar-user-role">Member</div>';
+    echo '</div>';
+    echo '<a href="logout.php" class="sidebar-logout" title="Keluar">';
+    echo '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>';
+    echo '</a>';
+    echo '</div>';
+    echo '</aside>';
+}
+
+function requireLogin() {
+    if (!isset($_SESSION['user_id'])) {
+        header('Location: login.php?redirect=' . urlencode($_SERVER['REQUEST_URI']));
+        exit;
+    }
+}
+
+function formatRupiah($amount) {
+    return 'Rp ' . number_format($amount, 0, ',', '.');
+}
+
+function getStatusBadge($status) {
+    $map = [
+        'pending'     => ['warning', 'Menunggu'],
+        'dikonfirmasi'=> ['info', 'Dikonfirmasi'],
+        'selesai'     => ['success', 'Selesai'],
+        'dibatalkan'  => ['danger', 'Dibatalkan'],
+    ];
+    [$type, $label] = $map[$status] ?? ['info', $status];
+    return "<span class=\"badge badge-{$type}\">{$label}</span>";
+}
+?>
