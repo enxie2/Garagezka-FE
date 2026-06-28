@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 require_once '../config/database.php';
 require_once '../includes/helpers.php';
@@ -64,14 +64,14 @@ if (isset($_GET['edit'])) {
 
 $showForm = isset($_GET['action']) && $_GET['action'] === 'tambah' || $editData;
 
-$iconOptions = ['oil'=>'ðŸ›¢ï¸ Ganti Oli','tune'=>'ðŸ”§ Tune Up','service'=>'ðŸ”© Servis','electric'=>'âš¡ Elektrik','tire'=>'ðŸ›ž Ban','brake'=>'ðŸ”´ Rem','wash'=>'âœ¨ Cuci','overhaul'=>'âš™ï¸ Overhaul'];
+$iconOptions = ['oil'=>'🛢️ Ganti Oli','tune'=>'🔧 Tune Up','service'=>'🛠️ Servis','electric'=>'⚡ Elektrik','tire'=>'🛞 Ban','brake'=>'🛑 Rem','wash'=>'✨ Cuci','overhaul'=>'⚙️ Overhaul'];
 ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kelola Layanan â€“ Admin GARAGEZKA</title>
+    <title>Kelola Layanan – Admin GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -84,12 +84,12 @@ $iconOptions = ['oil'=>'ðŸ›¢ï¸ Ganti Oli','tune'=>'ðŸ”§ Tune Up','
                 <h1 class="page-title">Kelola Layanan</h1>
                 <p class="page-subtitle">Tambah, edit, dan kelola semua layanan servis.</p>
             </div>
-            <a href="layanan.php?action=tambah" class="btn btn-primary">âž• Tambah Layanan</a>
+            <a href="layanan.php?action=tambah" class="btn btn-primary">➕ Tambah Layanan</a>
         </div>
 
-        <?php if (isset($_GET['saved'])): ?><div class="alert alert-success">âœ… Layanan berhasil disimpan.</div><?php endif; ?>
-        <?php if (isset($_GET['deleted'])): ?><div class="alert alert-danger">ðŸ—‘ï¸ Layanan berhasil dihapus.</div><?php endif; ?>
-        <?php if ($error): ?><div class="alert alert-danger">âŒ <?= $error ?></div><?php endif; ?>
+        <?php if (isset($_GET['saved'])): ?><div class="alert alert-success">✅ Layanan berhasil disimpan.</div><?php endif; ?>
+        <?php if (isset($_GET['deleted'])): ?><div class="alert alert-danger">🗑️ Layanan berhasil dihapus.</div><?php endif; ?>
+        <?php if ($error): ?><div class="alert alert-danger">❌ <?= $error ?></div><?php endif; ?>
 
         <!-- FORM -->
         <?php if ($showForm): ?>
@@ -157,12 +157,12 @@ $iconOptions = ['oil'=>'ðŸ›¢ï¸ Ganti Oli','tune'=>'ðŸ”§ Tune Up','
                 </thead>
                 <tbody>
                     <?php foreach ($layananList as $l): 
-                        $icons = ['oil'=>'ðŸ›¢ï¸','tune'=>'ðŸ”§','service'=>'ðŸ”©','electric'=>'âš¡','tire'=>'ðŸ›ž','brake'=>'ðŸ”´','wash'=>'âœ¨','overhaul'=>'âš™ï¸'];
+                        $icons = ['oil'=>'🛢️','tune'=>'🔧','service'=>'🛠️','electric'=>'⚡','tire'=>'🛞','brake'=>'🛑','wash'=>'✨','overhaul'=>'⚙️'];
                     ?>
                     <tr>
                         <td>
                             <div style="display:flex; align-items:center; gap:10px;">
-                                <span style="font-size:1.3rem;"><?= $icons[$l['icon']] ?? 'ðŸ”§' ?></span>
+                                <span style="font-size:1.3rem;"><?= $icons[$l['icon']] ?? '🔧' ?></span>
                                 <span style="font-weight:500;"><?= htmlspecialchars($l['nama_layanan']) ?></span>
                             </div>
                         </td>
@@ -174,16 +174,16 @@ $iconOptions = ['oil'=>'ðŸ›¢ï¸ Ganti Oli','tune'=>'ðŸ”§ Tune Up','
                                 <input type="hidden" name="toggle_id" value="<?= $l['id'] ?>">
                                 <button type="submit" class="badge <?= $l['is_active'] ? 'badge-success' : 'badge-danger' ?>"
                                     style="background:none; border:1px solid; cursor:pointer; padding:4px 10px; border-radius:4px;">
-                                    <?= $l['is_active'] ? 'âœ… Aktif' : 'âŒ Nonaktif' ?>
+                                    <?= $l['is_active'] ? '✅ Aktif' : '❌ Nonaktif' ?>
                                 </button>
                             </form>
                         </td>
                         <td>
                             <div style="display:flex; gap:6px;">
-                                <a href="layanan.php?edit=<?= $l['id'] ?>" class="btn btn-outline btn-sm">âœï¸ Edit</a>
+                                <a href="layanan.php?edit=<?= $l['id'] ?>" class="btn btn-outline btn-sm">📝 Edit</a>
                                 <form method="POST" style="display:inline;" onsubmit="return confirm('Hapus layanan ini?')">
                                     <input type="hidden" name="delete_id" value="<?= $l['id'] ?>">
-                                    <button type="submit" class="btn btn-outline btn-sm" style="color:var(--accent); border-color:rgba(229,53,53,0.3);">ðŸ—‘ï¸</button>
+                                    <button type="submit" class="btn btn-outline btn-sm" style="color:var(--accent); border-color:rgba(229,53,53,0.3);">🗑️</button>
                                 </form>
                             </div>
                         </td>

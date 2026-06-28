@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 require_once '../config/database.php';
 require_once '../includes/helpers.php';
@@ -35,7 +35,7 @@ $unreadCount = count(array_filter($pesanList, fn($p) => !$p['is_read']));
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesan Kontak â€“ Admin GARAGEZKA</title>
+    <title>Pesan Kontak – Admin GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
@@ -55,7 +55,7 @@ $unreadCount = count(array_filter($pesanList, fn($p) => !$p['is_read']));
             </div>
             <?php if ($unreadCount > 0): ?>
             <form method="POST">
-                <button name="mark_read" class="btn btn-outline btn-sm">âœ… Tandai Semua Dibaca</button>
+                <button name="mark_read" class="btn btn-outline btn-sm">✅ Tandai Semua Dibaca</button>
             </form>
             <?php endif; ?>
         </div>
@@ -63,7 +63,7 @@ $unreadCount = count(array_filter($pesanList, fn($p) => !$p['is_read']));
         <div style="display:flex; flex-direction:column; gap:14px;">
             <?php if (empty($pesanList)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">ðŸ“©</div>
+                <div class="empty-state-icon">✉️</div>
                 <h3>Belum ada pesan masuk</h3>
             </div>
             <?php else: ?>
@@ -88,14 +88,14 @@ $unreadCount = count(array_filter($pesanList, fn($p) => !$p['is_read']));
                     </p>
                     <div style="display:flex; gap:8px; flex-wrap:wrap;">
                         <a href="mailto:<?= htmlspecialchars($p['email']) ?>" class="btn btn-primary btn-sm">
-                            ðŸ“§ Balas via Email
+                            📧 Balas via Email
                         </a>
                         <?php if (!$p['is_read']): ?>
-                        <a href="kontak.php?read=<?= $p['id'] ?>" class="btn btn-outline btn-sm">âœ… Tandai Dibaca</a>
+                        <a href="kontak.php?read=<?= $p['id'] ?>" class="btn btn-outline btn-sm">✅ Tandai Dibaca</a>
                         <?php endif; ?>
                         <form method="POST" style="display:inline;" onsubmit="return confirm('Hapus pesan ini?')">
                             <input type="hidden" name="delete_id" value="<?= $p['id'] ?>">
-                            <button type="submit" class="btn btn-outline btn-sm" style="color:var(--accent);border-color:rgba(229,53,53,0.3);">ðŸ—‘ï¸ Hapus</button>
+                            <button type="submit" class="btn btn-outline btn-sm" style="color:var(--accent);border-color:rgba(229,53,53,0.3);">🗑️ Hapus</button>
                         </form>
                     </div>
                 </div>

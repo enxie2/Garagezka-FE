@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lupa Password â€“ GARAGEZKA</title>
+    <title>Lupa Password – GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert alert-danger">âŒ <?= $error ?></div>
         <?php endif; ?>
         <?php if ($success): ?>
-        <div class="alert alert-success">âœ… <?= htmlspecialchars($success) ?></div>
+        <div class="alert alert-success">✅ <?= htmlspecialchars($success) ?></div>
         <?php endif; ?>
 
         <form method="POST" action="lupa-password.php">

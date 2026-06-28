@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -57,14 +57,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $iconMap = [
-    'oil' => 'ðŸ›¢ï¸',
-    'tune' => 'ðŸ”§',
-    'service' => 'ðŸ”©',
-    'electric' => 'âš¡',
-    'tire' => 'ðŸ›ž',
-    'brake' => 'ðŸ”´',
-    'wash' => 'âœ¨',
-    'overhaul' => 'âš™ï¸',
+    'oil' => '🛢️',
+    'tune' => '🔧',
+    'service' => '🛠️',
+    'electric' => '⚡',
+    'tire' => '🛞',
+    'brake' => '🛑',
+    'wash' => '✨',
+    'overhaul' => '⚙️',
 ];
 
 $preselectedLayanan = (int)($_GET['layanan_id'] ?? 0);
@@ -77,7 +77,7 @@ $timeSlots = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Servis â€“ GARAGEZKA</title>
+    <title>Booking Servis – GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -92,13 +92,13 @@ $timeSlots = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16
         </div>
 
         <?php if ($error): ?>
-        <div class="alert alert-danger">âŒ <?= $error ?></div>
+        <div class="alert alert-danger">❌ <?= $error ?></div>
         <?php endif; ?>
 
         <?php if (empty($kendaraanList)): ?>
         <div class="card">
             <div class="empty-state">
-                <div class="empty-state-icon">ðŸï¸</div>
+                <div class="empty-state-icon">🏍️</div>
                 <h3>Belum ada kendaraan</h3>
                 <p>Tambahkan kendaraan Anda terlebih dahulu sebelum booking.</p>
                 <a href="kendaraan.php?tambah=1" class="btn btn-primary" style="margin-top: 16px;">Tambah Kendaraan</a>
@@ -121,7 +121,7 @@ $timeSlots = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16
                             <option value="">-- Pilih Kendaraan --</option>
                             <?php foreach ($kendaraanList as $k): ?>
                             <option value="<?= $k['id'] ?>" data-nama="<?= htmlspecialchars($k['nama_kendaraan']) ?>" data-plat="<?= htmlspecialchars($k['nomor_plat']) ?>">
-                                ðŸï¸ <?= htmlspecialchars($k['nama_kendaraan']) ?> (<?= htmlspecialchars($k['nomor_plat']) ?>)
+                                🏍️ <?= htmlspecialchars($k['nama_kendaraan']) ?> (<?= htmlspecialchars($k['nomor_plat']) ?>)
                             </option>
                             <?php endforeach; ?>
                         </select>
@@ -141,7 +141,7 @@ $timeSlots = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16
                             <div class="layanan-option <?= ($preselectedLayanan == $l['id']) ? 'selected' : '' ?>"
                                  onclick="selectLayanan(<?= $l['id'] ?>, '<?= addslashes($l['nama_layanan']) ?>', <?= $l['harga'] ?>)"
                                  id="layanan-<?= $l['id'] ?>">
-                                <div class="layanan-option-icon"><?= $iconMap[$l['icon']] ?? 'ðŸ”§' ?></div>
+                                <div class="layanan-option-icon"><?= $iconMap[$l['icon']] ?? '🔧' ?></div>
                                 <div class="layanan-option-name"><?= htmlspecialchars($l['nama_layanan']) ?></div>
                                 <div class="layanan-option-desc"><?= htmlspecialchars(substr($l['deskripsi'], 0, 50)) ?>...</div>
                             </div>
@@ -188,20 +188,20 @@ $timeSlots = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16
                     <div class="summary-title">RINGKASAN BOOKING</div>
                     <div class="summary-row">
                         <span class="summary-label">Kendaraan</span>
-                        <span class="summary-value" id="sum-kendaraan">â€“</span>
+                        <span class="summary-value" id="sum-kendaraan">–</span>
                     </div>
                     <div class="summary-row">
                         <span class="summary-label">Layanan</span>
-                        <span class="summary-value" id="sum-layanan">â€“</span>
+                        <span class="summary-value" id="sum-layanan">–</span>
                     </div>
                     <div class="summary-row">
                         <span class="summary-label">Jadwal</span>
-                        <span class="summary-value" id="sum-jadwal">â€“</span>
+                        <span class="summary-value" id="sum-jadwal">–</span>
                     </div>
                     <hr class="summary-divider">
                     <div class="summary-row">
                         <span class="summary-label">Biaya Jasa Servis</span>
-                        <span class="summary-value" id="sum-biaya-servis">â€“</span>
+                        <span class="summary-value" id="sum-biaya-servis">–</span>
                     </div>
                     <div class="summary-row">
                         <span class="summary-label">Biaya Admin</span>
@@ -210,7 +210,7 @@ $timeSlots = ['08:00', '09:00', '10:00', '11:00', '13:00', '14:00', '15:00', '16
                     <hr class="summary-divider">
                     <div class="summary-total">
                         <span>Total Biaya</span>
-                        <span class="summary-total-value" id="sum-total">â€“</span>
+                        <span class="summary-total-value" id="sum-total">–</span>
                     </div>
                     <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-bottom: 16px;" id="sum-estimasi"></div>
                     <button type="submit" class="btn btn-primary btn-full btn-lg" id="btn-booking">Lanjut Booking</button>

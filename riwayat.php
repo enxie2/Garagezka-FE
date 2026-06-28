@@ -22,7 +22,7 @@ $riwayat = $conn->query("
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Riwayat Servis â€“ GARAGEZKA</title>
+    <title>Riwayat Servis – GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -39,7 +39,7 @@ $riwayat = $conn->query("
         <div class="table-wrapper">
             <?php if (empty($riwayat)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">ðŸ”§</div>
+                <div class="empty-state-icon">🔧</div>
                 <h3>Belum ada riwayat servis</h3>
                 <p>Mulai booking servis pertama Anda</p>
                 <a href="booking.php" class="btn btn-primary" style="margin-top: 16px;">Booking Sekarang</a>

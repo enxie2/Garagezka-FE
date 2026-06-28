@@ -35,8 +35,8 @@ foreach ($notifList as $n) {
 }
 
 $notifIcons = [
-    'berhasil' => 'ðŸ“…',
-    'selesai'  => 'ðŸ”§',
+    'berhasil' => '📅',
+    'selesai'  => '🔧',
     'info'     => 'â„¹ï¸',
     'peringatan' => 'âš ï¸',
 ];
@@ -46,7 +46,7 @@ $notifIcons = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notifikasi â€“ GARAGEZKA</title>
+    <title>Notifikasi – GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -79,7 +79,7 @@ $notifIcons = [
         <div class="table-wrapper">
             <?php if (empty($notifList)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">ðŸ””</div>
+                <div class="empty-state-icon">🔔</div>
                 <h3>Belum ada notifikasi</h3>
                 <p>Notifikasi akan muncul setelah Anda melakukan booking.</p>
             </div>

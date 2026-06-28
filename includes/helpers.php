@@ -7,6 +7,19 @@ function renderNavbar($currentPage = '') {
         'layanan' => ['Layanan', 'layanan.php'],
         'kontak' => ['Kontak', 'kontak.php'],
     ];
+    echo '<style>
+    .navbar-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 32px !important;
+    }
+    @media (max-width: 768px) {
+        .navbar-nav {
+            display: none !important;
+        }
+    }
+    </style>';
     echo '<nav class="navbar">';
     echo '<a href="index.php" class="navbar-brand">GARAGE<span>ZKA</span></a>';
     echo '<div class="navbar-nav">';

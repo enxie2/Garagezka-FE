@@ -31,3 +31,10 @@ desktop.ini
 *.tmp
 *.bak
 *.swp
+
+# Backend files (tracked in Garagezka-BE instead)
+api/
+database/
+config/
+DOKUMENTASI_API_BACKEND*
+

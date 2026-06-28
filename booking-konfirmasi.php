@@ -32,7 +32,7 @@ if (!$booking) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking Terkonfirmasi â€“ GARAGEZKA</title>
+    <title>Booking Terkonfirmasi – GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -48,7 +48,7 @@ if (!$booking) {
         <div style="max-width: 640px;">
             <!-- SUCCESS BANNER -->
             <div style="background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: 12px; padding: 24px; display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
-                <div style="font-size: 2rem;">âœ…</div>
+                <div style="font-size: 2rem;">✅</div>
                 <div>
                     <div style="font-size: 1rem; font-weight: 700; color: var(--success); margin-bottom: 4px;">Booking Dikonfirmasi!</div>
                     <div style="font-size: 0.875rem; color: var(--text-secondary);">Nomor Booking: <strong>#<?= str_pad($bookingId, 5, '0', STR_PAD_LEFT) ?></strong></div>

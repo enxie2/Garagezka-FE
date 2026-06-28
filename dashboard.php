@@ -42,7 +42,7 @@ $notifs = $conn->query("SELECT * FROM notifikasi WHERE user_id = $userId ORDER B
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard â€“ GARAGEZKA</title>
+    <title>Dashboard – GARAGEZKA</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -96,12 +96,12 @@ $notifs = $conn->query("SELECT * FROM notifikasi WHERE user_id = $userId ORDER B
                     <span class="badge badge-new" style="margin-left: 8px;"><?= $totalNotifUnread ?> BARU</span>
                     <?php endif; ?>
                 </span>
-                <a href="notifikasi.php" class="btn btn-ghost btn-sm">Lihat Semua â†’</a>
+                <a href="notifikasi.php" class="btn btn-ghost btn-sm">Lihat Semua →</a>
             </div>
             <?php foreach ($notifs as $n): ?>
             <div class="notif-item">
                 <div class="notif-icon <?= $n['tipe'] ?>">
-                    <?= $n['tipe'] === 'berhasil' ? 'ðŸ“…' : 'ðŸ”§' ?>
+                    <?= $n['tipe'] === 'berhasil' ? '📅' : '🔧' ?>
                 </div>
                 <div class="notif-content">
                     <div class="notif-title"><?= htmlspecialchars($n['judul']) ?></div>
@@ -117,11 +117,11 @@ $notifs = $conn->query("SELECT * FROM notifikasi WHERE user_id = $userId ORDER B
         <div class="table-wrapper">
             <div class="table-header">
                 <span class="table-title">Riwayat Booking</span>
-                <a href="riwayat.php" class="btn btn-ghost btn-sm">Lihat Semua â†’</a>
+                <a href="riwayat.php" class="btn btn-ghost btn-sm">Lihat Semua →</a>
             </div>
             <?php if (empty($recentBookings)): ?>
             <div class="empty-state">
-                <div class="empty-state-icon">ðŸ“‹</div>
+                <div class="empty-state-icon">📋</div>
                 <h3>Belum ada booking</h3>
                 <p>Mulai booking servis pertama Anda</p>
             </div>

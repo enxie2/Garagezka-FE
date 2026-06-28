@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 require_once __DIR__ . '/config/database.php';
 require_once __DIR__ . '/includes/helpers.php';
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login â€“ GARAGEZKA</title>
+    <title>Login – GARAGEZKA</title>
     <meta name="description" content="Masuk ke akun GARAGEZKA Anda untuk melanjutkan servis motor.">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p class="auth-subtitle">Masuk untuk melanjutkan servis motor Anda</p>
 
         <?php if ($error): ?>
-        <div class="alert alert-danger">âŒ <?= $error ?></div>
+        <div class="alert alert-danger">❌ <?= $error ?></div>
         <?php endif; ?>
 
         <form method="POST" action="login.php<?= isset($_GET['redirect']) ? '?redirect='.urlencode($_GET['redirect']) : '' ?>">
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="input-group">
                     <input type="password" id="password" name="password" class="form-control" 
                            placeholder="Masukkan password Anda" required>
-                    <button type="button" class="input-group-icon" id="togglePassword" onclick="togglePass()">ðŸ‘ï¸</button>
+                    <button type="button" class="input-group-icon" id="togglePassword" onclick="togglePass()">👁️</button>
                 </div>
             </div>
             <div class="remember-row">
@@ -105,10 +105,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         const btn = document.getElementById('togglePassword');
         if (pw.type === 'password') {
             pw.type = 'text';
-            btn.textContent = 'ðŸ™ˆ';
+            btn.textContent = '🙈';
         } else {
             pw.type = 'password';
-            btn.textContent = 'ðŸ‘ï¸';
+            btn.textContent = '👁️';
         }
     }
     </script>
