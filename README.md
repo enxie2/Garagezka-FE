@@ -2,6 +2,10 @@
 
 Website booking servis motor berbasis PHP dengan desain dark mode sesuai Figma.
 
+> [!NOTE]
+> Proyek ini menggunakan arsitektur terpisah untuk repositori Frontend dan Backend.
+> Repositori Backend dihubungkan sebagai Git Submodule di folder [backend/](file:///D:/sem%206/Layanan%20WEB/App%20Garagezka/backend) yang merujuk ke repositori [Garagezka-BE](https://github.com/enxie2/Garagezka-BE).
+
 ## 🚀 Cara Setup
 
 ### Prasyarat
